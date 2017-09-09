@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home | Sample Site</title>
+	
+	<!-- Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
+
+	<link rel="stylesheet" type="text/css" id="normalize-css" href="assets/plugins/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" id="style-css" href="assets/css/style.min.css">
+</head>
+<body class="page-template">
+	
+<!-- wrapper -->
+<div class="wrapper">
+<div class="inner-wrapper">
+	
+
+	<header id="masthead" class="header">
+		<div class="header-top">
+			
+		</div>
+		<div class="header-main">
+			<nav>
+				<ul>
+					<li><a href="#">home</a></li>
+					<li><a href="#">about</a></li>
+					<li><a href="#">services</a></li>
+					<li><a href="#">contact us</a></li>
+					<li><a href="#">news</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+</div><!-- End inner-wrapper -->
+</div><!-- End wrapper -->
+
+	<script type="text/javascript">
+
+		(function() {
+
+			var element = document.querySelector('nav ul');
+			var elements = document.querySelectorAll('nav ul li');
+			var elementsLink = document.querySelectorAll('nav ul li a');
+
+			var elementsLength = elements.length;
+
+			element.classList.add('list');
+			element.classList.add('list-unstyled');
+
+			// Loop for unique id's and striped like item classes
+			for ( i = 0; i < elementsLength; i++ ) {
+				// adds unique id of every menu-item
+				elements[i].setAttribute( 'id', 'menu-item' + '-' + i );
+
+				// adds odd and even class of every menu-item
+				i % 2 == 0 ? elements[i].setAttribute('class', 'odd') : elements[i].setAttribute('class', 'even');
+			}
+
+
+			function multiply( a, b ){
+				var result = a * b;
+				return result;
+			}
+
+			var miniMultiply = multiply(5, 5);
+			console.log(miniMultiply);
+			//////////
+
+		})();
+		
+	</script>
+
+</body>
+</html>

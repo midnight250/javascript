@@ -1,0 +1,26 @@
+body{
+	font-family: 'Noto Sans', sans-serif;
+	line-height: normal;
+}
+
+ul,
+ol{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+nav ul li a{
+	display: block;
+	background-color: red;
+	padding: 1em;
+	text-transform: uppercase;
+	&::hover,
+	&::focus{
+		text-decoration: underline;
+	}
+}

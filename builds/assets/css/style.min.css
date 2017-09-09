@@ -1,0 +1,1 @@
+body{font-family:'Noto Sans',sans-serif;line-height:normal}ol,ul{margin:0;padding:0;list-style:none}nav ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}nav ul li a{display:block;background-color:red;padding:1em;text-transform:uppercase}nav ul li a::focus,nav ul li a::hover{text-decoration:underline}
