@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     cleancss = require('gulp-clean-css'),
     cache = require('gulp-cache'),
     cssmin = require('gulp-cssmin'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    deletefile = require('gulp-delete-file');
 
 gulp.task('css', function() {
     return gulp.src(['sass/sass/style.scss'])
@@ -20,19 +21,27 @@ gulp.task('css', function() {
 		indentWidth: '1'
 	}).on('error', sass.logError))
 	.pipe(postcss([
-		autoprefixer('last 2 versions', '> 1%')
+		autoprefixer('last 2 versions', '> 1%') 
 	]))
-	//.pipe(sourcemaps.write('./'))
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest('builds/assets/css'))
 
 	// Minify CSS
 	.pipe(cleancss())
-	.pipe(rename(
-		{
-			suffix: '.min'
-		}
-	))
+	.pipe(rename({ extname: '.min.css' }))
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest('builds/assets/css'));
+});
+
+gulp.task('deletefile', function () {
+    var regexp = /\w*(\-\w{8}\.js){1}$|\w*(\-\w{8}\.css){1}$/;
+    return gulp.src([
+    	'builds/assets/css/style.css.min.css',
+    	'builds/assets/css/style.css.min.css.map'])
+    .pipe(deletefile({
+        reg: regexp,
+        deleteMatch: false
+    }))
 });
 
 gulp.task('css-bootstrap', function() {
@@ -53,14 +62,35 @@ gulp.task('css-bootstrap', function() {
 	.pipe(gulp.dest('builds/assets/plugins/bootstrap/css'));
 });
 
+gulp.task('js-bootstrap', function() {
+	return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.js'])
+	.pipe(gulp.dest('builds/assets/plugins/bootstrap/js'))
+	.pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('builds/assets/plugins/bootstrap/js'));
+});
+
+gulp.task('js-jquery', function() {
+	return gulp.src([
+		'node_modules/jquery/dist/jquery.js',
+		'node_modules/jquery/dist/jquery.slim.js'])
+	.pipe(gulp.dest('builds/assets/plugins/jquery'))
+	.pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('builds/assets/plugins/jquery'));
+});
+
 gulp.task('clear', function (done) {
-  return cache.clearAll(done);
+    return cache.clearAll(done);
 });
 
 gulp.task('watch', function() {
 	gulp.watch(['sass/sass/**/*.scss'], ['css']);
+	gulp.watch(['builds/**'], ['deletefile']);
+	gulp.watch(['sass/sass/**/*.scss'], ['js-jquery']);
 	gulp.watch(['builds/**'], ['clear']);
 	gulp.watch(['sass/sass-bootstrap/**/*.scss'], ['css-bootstrap']);
+	gulp.watch(['sass/sass-bootstrap/**/*.scss'], ['js-bootstrap']);
 });
 
 gulp.task('default', ['watch']);
