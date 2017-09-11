@@ -8,9 +8,10 @@
 	
 	<!-- Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" id="normalize-css" href="assets/plugins/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" id="style-css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" id="style-css" href="assets/css/style.min.css">
 </head>
 <body class="page-template">
 	
@@ -21,55 +22,86 @@
 
 	<header id="masthead" class="header-v1">
 		<div class="header-top">
-			
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-6 col-md-3">
+						<div class="logo">
+							<a href="javascript:void(0)"><img src="http://via.placeholder.com/150x50" alt="logo"></a>
+						</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<form action="get" class="search-form input-group">
+							<input type="search" class="search-field form-control" placeholder="Search ...">
+							<span class="input-group-btn">
+								<button type="submit" class="search-submit btn btn-secondary">
+									<span class="sr-only">search</span>
+									<i class="fa fa-search"></i>
+								</button>
+							</span>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="header-main">
-			<nav>
-				<ul>
-					<li><a href="javascript:void(0)">home</a></li>
-					<li><a href="javascript:void(0)">about</a></li>
-					<li><a href="javascript:void(0)">services</a></li>
-					<li><a href="javascript:void(0)">contact us</a></li>
-					<li><a href="javascript:void(0)">news</a></li>
-				</ul>
-			</nav>
+		    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		      <div class="container">
+		        <a class="navbar-brand d-lg-none" href="#">Container</a>
+		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+		          <span class="navbar-toggler-icon"></span>
+		        </button>
+
+		        <div class="collapse navbar-collapse" id="navbarsExample07">
+		          <ul class="navbar-nav mr-auto">
+		            <li class="nav-item"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
+		            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+		            <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+		            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+		          </ul>
+		        </div>
+		      </div>
+		    </nav>
 		</div>
 	</header>
 
 
 </div><!-- End inner-wrapper -->
 </div><!-- End wrapper -->
-
+	
+	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/popper/umd/popper.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
+
 
 		(function() {
 
-			var element = document.querySelector('nav ul');
-			var elements = document.querySelectorAll('nav ul li');
-			var elementsLink = document.querySelectorAll('nav ul li a');
+			// var element = document.querySelector('nav ul');
+			// var elements = document.querySelectorAll('nav ul li');
+			// var elementsLink = document.querySelectorAll('nav ul li a');
 
-			var elementsLength = elements.length;
+			// var elementsLength = elements.length;
 
-			element.classList.add('list');
-			element.classList.add('list-unstyled');
+			// element.classList.add('list');
+			// element.classList.add('list-unstyled');
 
-			// Loop for unique id's and striped like item classes
-			for ( i = 0; i < elementsLength; i++ ) {
-				// adds unique id of every menu-item
-				elements[i].setAttribute( 'id', 'menu-item' + '-' + i );
+			// // Loop for unique id's and striped like item classes
+			// for ( i = 0; i < elementsLength; i++ ) {
+			// 	// adds unique id of every menu-item
+			// 	elements[i].setAttribute( 'id', 'menu-item' + '-' + i );
 
-				// adds odd and even class of every menu-item
-				i % 2 == 0 ? elements[i].setAttribute('class', 'odd') : elements[i].setAttribute('class', 'even');
-			}
+			// 	// adds odd and even class of every menu-item
+			// 	i % 2 == 0 ? elements[i].setAttribute('class', 'odd') : elements[i].setAttribute('class', 'even');
+			// }
 
 
-			function multiply( a, b ){
-				var result = a * b;
-				return result;
-			}
+			// function multiply( a, b ){
+			// 	var result = a * b;
+			// 	return result;
+			// }
 
-			var miniMultiply = multiply(5, 5);
-			console.log(miniMultiply);
+			// var miniMultiply = multiply(5, 5);
+			// console.log(miniMultiply);
 			//////////
 
 		})();

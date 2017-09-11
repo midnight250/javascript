@@ -1,2 +1,2 @@
-body{font-family:'Noto Sans',sans-serif}.header-v1{background-color:#333}nav ul{margin:0}@media (min-width:576px){nav ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}}nav ul li a{position:relative;display:block;padding:1em;color:#fff!important;text-transform:uppercase;background-color:#4d4d4d}nav ul li a:focus,nav ul li a:hover{text-decoration:none;background-color:#333}
+body{font-family:'Noto Sans',sans-serif}.header-v1{background-color:#dedede}.header-v1 .header-top{padding-top:1rem;padding-right:0;padding-bottom:1rem;padding-left:0}@media (max-width:575px){.header-v1 .header-top{padding-top:.5rem;padding-right:0;padding-bottom:.5rem;padding-left:0}}
 /*# sourceMappingURL=style.min.css.map */
