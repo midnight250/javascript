@@ -20,8 +20,64 @@ body{
 }
 
 .header-v1{
-	background-color: #dedede;
+	background-color: $gray-300;
 	.header-top{
 		@include padding(1rem, 0, 1rem, 0);
+	}
+	.header-main{
+		.navbar-v1{
+			@include media-breakpoint-up(lg) {
+				padding: 0;
+			}
+			@include media-breakpoint-up(lg) {
+				.navbar-nav{
+					position: relative;
+					width: 100%;
+					.nav-item.dropdown{
+						position: static;
+					}
+					.nav-item{
+						.dropdown-menu{
+							width: 100%;
+							> .container{
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+			.navbar-nav{
+				.nav-item{
+					.nav-link{
+						@include media-breakpoint-up(lg) {
+							padding: 1rem;
+						}
+						@include media-breakpoint-down(lg) {
+							padding-left: 0.5rem;
+							padding-right: 0.5rem;
+						}
+						&:hover,
+						&:focus{
+							background-color: $gray-300;
+						}
+					}
+					.dropdown-menu{
+						margin: 0;
+						padding: 0;
+						background-color: $gray-300;
+						border-radius: 0;
+						> .container{
+							> .row{
+								// overwrite Javascript generated css
+								@include media-breakpoint-down(md) {
+									height: auto !important;
+									padding: 1rem 0.5rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

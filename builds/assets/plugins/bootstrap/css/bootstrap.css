@@ -2765,7 +2765,7 @@ tbody.collapse.show {
 	list-style: none;
 	background-color: #fff;
 	background-clip: padding-box;
-	border: 1px solid rgba(0, 0, 0, 0.15);
+	border: 0 solid transparent;
 	border-radius: 0.25rem;
 }
 

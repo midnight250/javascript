@@ -86,10 +86,14 @@ gulp.task('clear', function (done) {
 
 gulp.task('watch', function() {
 	gulp.watch(['sass/sass/**/*.scss'], ['css']);
-	gulp.watch(['builds/**'], ['deletefile']);
-	gulp.watch(['sass/sass/**/*.scss'], ['js-jquery']);
-	gulp.watch(['builds/**'], ['clear']);
 	gulp.watch(['sass/sass-bootstrap/**/*.scss'], ['css-bootstrap']);
+	gulp.watch(['sass/sass/**/*.scss'], ['css-bootstrap']);
+	gulp.watch(['sass/sass-bootstrap/**/*.scss'], ['css']);
+
+
+	gulp.watch(['sass/sass/**/*.scss'], ['js-jquery']);
+	gulp.watch(['builds/**'], ['deletefile']);
+	gulp.watch(['builds/**'], ['clear']);
 	gulp.watch(['sass/sass-bootstrap/**/*.scss'], ['js-bootstrap']);
 });
 
