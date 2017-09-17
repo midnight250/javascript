@@ -98,17 +98,15 @@
 		                    <li class="nav-item"><a href="#" class="nav-link">Test</a></li>
 				        </ul>
 		            </li>
-		            <li class="nav-item hs-has-mega-menu" data-animation-in="fadeIn" data-animation-out="fadeOut">
+		            <li class="nav-item hs-has-mega-menu" data-animation-in="fadeIn" data-animation-out="fadeOut" data-position="right">
 		            	<a class="nav-link" id="mega-menu" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-mega-menu">
 		            		Mega Menu
    						</a>
    						<div class="hs-mega-menu list-unstyled" aria-labelledby="mega-menu">
-   							<div class="container">
-	   							<div class="row">
-	   								<div class="col">test</div>
-	   								<div class="col">test</div>
-	   								<div class="col">test</div>
-	   							</div>
+   							<div class="row">
+   								<div class="col">test</div>
+   								<div class="col">test</div>
+   								<div class="col">test</div>
    							</div>
    						</div>
 		            </li>
@@ -138,11 +136,7 @@
 		$(window).on('load', function(){
 
 			// initialization of HSMegaMenu component
-	        $('.js-mega-menu').HSMegaMenu({
-	          event: 'hover',
-	          pageContainer: $('.container'),
-	          breakpoint: 991
-	        });
+	        $('.js-mega-menu').HSMegaMenu();
 
 		});
 
