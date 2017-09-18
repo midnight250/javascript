@@ -15,8 +15,35 @@
   }
 }
 
+@mixin paddingTb($top, $bottom){
+	padding-top: $top;
+	padding-bottom: $bottom;
+	@include media-breakpoint-down(lg) {
+		padding-top: $top/3;
+		padding-bottom: $bottom/3;
+	}
+	@include media-breakpoint-down(md) {
+		padding-top: $top/4;
+		padding-bottom: $bottom/4;
+	}
+	@include media-breakpoint-down(sm) {
+		padding-top: $top/5;
+		padding-bottom: $bottom/5;
+	}
+	@include media-breakpoint-down(xs) {
+		padding-top: $top/6;
+		padding-bottom: $bottom/6;
+	}
+}
+
+
+
 body{
 	font-family: 'Noto Sans', sans-serif;
+}
+
+.section{
+	@include paddingTb(3rem, 3rem);
 }
 
 .header-v1{
@@ -40,19 +67,24 @@ body{
 				@include media-breakpoint-up(lg) {
 					padding: 0.8rem;
 				}
+				@include media-breakpoint-down(md) {
+					padding-left: 0.5rem;
+					padding-right: 0.5rem;
+				}
 			}
 		}
 	}
 
 
 
-
+	// Mega Menu Custom CSS
 	.hs-sub-menu, 
 	.hs-mega-menu{
 		margin: 0;
 	}
 	.hs-sub-menu,
 	.hs-mega-menu{
+		background-color: $gray-300;
 		@include media-breakpoint-up(lg) {
 			&::before{
 				position: absolute;
@@ -61,18 +93,20 @@ body{
 				left: 0;
 				width: 100%;
 				height: 3px;
-				background-color: $gray-300;
+				background-color: $gray-500;
 			}
 		}
 		@include media-breakpoint-down(md) {
-			border-top: solid 3px $gray-300;
+			border-top: solid 3px $gray-500;
 		}
 	}
 	.hs-mega-menu{
 		left: 15px !important;
 		right: 15px !important;
-		padding: 0 15px;
+		padding: 15px;
 	}
+
+
 	.hs-has-sub-menu > a::after,
 	.hs-has-sub-menu .hs-has-sub-menu > a::after,
 	.hs-has-mega-menu > a::after{
